@@ -26,8 +26,11 @@ export default class Carousel {
             this.slides = document.querySelectorAll('.carousel__slide');
             this.arrayOfSlides = Array.prototype.slice.call(this.slides);
 
+            this.setSlidesPerView();
+
             this.nextNav = document.querySelector(this.options.navNext);
             if (this.nextNav) {
+                this.nextNav.disabled = this.slidesPerView >= this.arrayOfSlides.length;
                 this.nextNav.addEventListener('click', this.moveNext.bind(this));
             }
             this.prevNav = document.querySelector(this.options.navPrev);
@@ -36,7 +39,7 @@ export default class Carousel {
                 this.prevNav.addEventListener('click', this.movePrev.bind(this));
             }
 
-            this.setSlidesPerView();
+            
             window.addEventListener('resize', this.setSlidesPerView.bind(this));
 
             this.carouselWrapper.addEventListener('transitionend', () => {
