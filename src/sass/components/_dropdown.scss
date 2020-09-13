@@ -1,0 +1,119 @@
+.dropdown {
+  position: relative;
+
+  &:hover, &:focus-within {
+    .dropdown__list {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0.3rem 0.6rem rgba($black, 0.2);
+    }
+    .dropdown__option {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.dropdown__label {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: 4px;
+  }
+}
+
+.dropdown__list {
+  position: absolute;
+  right: 0;
+  min-width: 2rem;
+  margin: 0;
+  padding: 0.4em 0;
+  list-style: none;
+  background: $white;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top right;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 300ms $ease-in-out;
+
+  li {
+    width: 100%;
+  }
+}
+
+.dropdown__option {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.1em 1.2em;
+  opacity: 0;
+  transform: translate(100%, -100%);
+  transition: all 200ms $ease-in-out 100ms;
+
+  &--active {
+    color: $dark;
+  }
+}
+
+.dropdown--language {
+  padding-top: calc(20px - 0.4em);
+  font-size: 0.875rem;
+  font-weight: 500;
+  .dropdown__label {
+    color: $white;
+    &::after {
+      border-top-color: $primary;
+    }
+  }
+  .dropdown__list {
+    // margin-top: 4px;
+    right: 0.4em;
+  }
+  @include media-down(lg) {
+    margin-top: 30px;
+    .dropdown__label {
+      display: none;
+    }
+    &,
+    &:hover {
+      .dropdown__list {
+        position: relative;
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0;
+        background: transparent;
+
+        li {
+          display: inline;
+        }
+      }
+      .dropdown__option {
+        display: inline-block;
+        padding: 0 0.4em;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        color: $white;
+
+        &--active {
+          color: $dark;
+        }
+      }
+    }
+  }
+  @include media-up(xxl) {
+    transform: translateX(80px);
+  }
+}

@@ -1,10 +1,10 @@
 
-#Loopique WP Theme
+# Loopique WP Theme
 
-##Installation
+Theme for Beat's WordPress Developer Assignment
 
-### Setup
-
-```sh
-$ npm install
-```
+Starter Theme: _s
+Required Plugins: ACF
+Task Runner: npm scripts
+Bundler: Webpack
+Libraries used: normalize.css

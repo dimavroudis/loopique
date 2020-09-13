@@ -18,10 +18,11 @@
 
 			<div class="row">
 				<div class="col col--6">
-
+					<h2 class="site-contact__title"><?php echo get_theme_mod('footer_title') ?></h2>
+					<p class="site-contact__text"><?php echo get_theme_mod('footer_content') ?></p>
 				</div>
 			</div>
-			<form class="form" id="contactForm">
+			<form class="form form--footer" id="contactForm">
 				<div class="row">
 					<div class="col col--6">
 						<div class="form__group">
@@ -58,6 +59,7 @@
 						<button type="submit" class="btn form__btn">
 							<?php _e('Submit ', 'loopique'); ?>
 						</button>
+						<div class="form__message"></div>
 					</div>
 				</div>
 			</form>

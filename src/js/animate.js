@@ -43,7 +43,7 @@ export class AnimateOnEntry {
     }
 }
 
-export class AnimateOnExit {
+export class Parallax {
 
     elements;
 
@@ -87,15 +87,56 @@ export class AnimateOnExit {
 
     observerCallback(entries) {
         entries.forEach((entry) => {
+            const sizeRatio = window.innerHeight / entry.target.offsetHeight;
             if (entry.target.animateOnExit) {
+                let opacity = 1, transform = '';
+                if (sizeRatio >= 1) {
+                    opacity = Math.pow(entry.intersectionRatio, 4);
+                    transform = (Math.sqrt(1 - entry.intersectionRatio, 2) * 100);
+                } else {
+                    opacity = Math.pow(entry.intersectionRatio + (1 - sizeRatio), 3);
+                    transform = (1 - entry.intersectionRatio - (1 - sizeRatio)) * 1.5 * 100;
+                }
                 entry.target.animateOnExit.forEach((element) => {
-                    element.style.opacity = Math.pow(entry.intersectionRatio, 4);
-                    element.style.transform = 'translateY(-' + (Math.sqrt(1 - entry.intersectionRatio, 2) * 100) + '%)';
+                    element.style.opacity = opacity;
+                    element.style.transform = 'translateY(-' + transform > 0 + '%)';
                 })
+
             } else {
                 entry.target.style.opacity = Math.pow(entry.intersectionRatio, 4);
                 entry.target.style.transform = 'translateY(-' + (Math.sqrt(1 - entry.intersectionRatio, 3) * 100) + '%)';
             }
         });
+    }
+}
+
+export class Header {
+    header;
+    last_known_scroll_position = 0;
+    ticking = false;
+
+    constructor(id) {
+        this.header = document.getElementById(id);
+        if (this.header) {
+            window.addEventListener('scroll', (e) => {
+                if (!this.ticking) {
+                    window.requestAnimationFrame(() => {
+                        this.toggleHeader();
+                        this.ticking = false;
+                    });
+                    this.ticking = true;
+                }
+            });
+        }
+    }
+
+    toggleHeader() {
+        const current_position = window.scrollY
+        if (this.last_known_scroll_position < current_position && !document.body.classList.contains('open-menu')) {
+            this.header.classList.add('site-header--hide');
+        } else if (this.last_known_scroll_position > current_position) {
+            this.header.classList.remove('site-header--hide');
+        }
+        this.last_known_scroll_position = current_position;
     }
 }

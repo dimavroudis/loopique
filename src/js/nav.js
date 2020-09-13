@@ -36,12 +36,14 @@ export default class PrimaryMenu {
     openMenu() {
         this.menu.style.top = getComputedStyle(document.documentElement).marginTop;
         this.menu.classList.add("open");
+        document.body.classList.add("open-menu")
         this.burger.setAttribute("aria-expanded", "true");
         this.status = "open";
     }
 
     closeMenu() {
         this.menu.classList.remove("open");
+        document.body.classList.remove("open-menu")
         this.burger.setAttribute("aria-expanded", "false");
         this.status = "closed";
         document.body.style = "";

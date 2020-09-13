@@ -26,26 +26,37 @@
 	<?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-link" href="#primary"><?php esc_html_e('Skip to content', 'loopique'); ?></a>
 
-	<header id="masthead" class="site-header container">
-		<div class="site-branding">
-			<?php the_custom_logo(); ?>
-		</div>
-		<button class="burger burger-trigger" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'project_parenting'); ?>">
-			<div class="burger__lines">
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
+	<header id="masthead" class="site-header">
+		<div class="site-header__container container">
+			<div class="site-branding">
+				<?php the_custom_logo(); ?>
 			</div>
-		</button>
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'depth'          => 1,
-				)
-			);
-			?>
-		</nav>
+			<button class="burger burger-trigger" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'project_parenting'); ?>">
+				<div class="burger__wrapper" aria-hidden="true">
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+					<span class="burger__line"></span>
+				</div>
+			</button>
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'menu-1',
+						'menu_id'         => 'primary-menu',
+						'container_class' => 'menu-wrapper',
+						'depth'           => 1,
+					)
+				);
+				?>
+				<div class="dropdown dropdown--language">
+					<div class="dropdown__label">EN</div>
+					<ul class="dropdown__list">
+						<li><a class="dropdown__option dropdown__option--active">EN</a></li>
+						<li><a class="dropdown__option" href="#">EL</a></li>
+					</ul>
+
+				</div>
+			</nav>
+		</div>
 	</header>

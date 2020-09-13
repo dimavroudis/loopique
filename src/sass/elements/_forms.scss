@@ -16,19 +16,27 @@
     height: 51px;
     min-height: 51px;
     border-width: 0 0 1px 0;
-    border-color: $white;
+    border-color: $text-color;
     background: transparent;
-    color: $white;
+    color: $text-color;
     transition: border-color 200ms ease-in-out;
 
     &:focus,
     &:active {
       outline: 0;
-      border-color: $light;
+      border-color: $primary;
     }
     &:invalid {
       outline: 0;
-      //   border-color: rgba(211, 0, 0, 0.8);
+    }
+  }
+
+  &--touched {
+    input,
+    textarea {
+      &:invalid {
+        border-color: $red;
+      }
     }
   }
 
@@ -42,14 +50,15 @@
   label {
     display: block;
     position: absolute;
+    cursor: pointer;
     left: 0;
     top: 0;
     width: 100%;
     margin: 0;
     padding-top: 6px;
     font-weight: 500;
-    background-color: $primary;
-    transition: all 400ms ease-out;
+    background-color: $bg-color;
+    transition: all 250ms $ease-in-out;
   }
   &--active label,
   &--filled label {
@@ -59,41 +68,47 @@
 }
 
 .form__checkbox {
-  margin-right: 1rem;
+  // margin-right: 1rem;
   input[type='checkbox'] {
     position: absolute;
     z-index: -1;
     opacity: 0;
 
     &:checked ~ label::after {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+      transform: scale(1);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffce40' d='M504.502 75.496c-9.997-9.998-26.205-9.998-36.204 0L161.594 382.203 43.702 264.311c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.994 135.992c9.994 9.997 26.214 9.99 36.204 0L504.502 111.7c9.998-9.997 9.997-26.206 0-36.204z'/%3E%3C/svg%3E");
     }
   }
   label {
     display: block;
     position: relative;
-    width: 34px;
-    height: 34px;
-    &::before {
+    min-width: 34px;
+    min-height: 34px;
+    padding-left: calc(34px + 1rem);
+
+    &::before,
+    &::after {
       content: '';
       position: absolute;
+      top: 0;
+      left: 0;
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 34px;
+      height: 34px;
+    }
+
+    &::before {
       background: $dark;
       border-radius: 50%;
       pointer-events: none;
     }
 
     &::after {
-      position: absolute;
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 50% 50%;
+      transform: scale(0) rotate(45deg);
+      transition: transform 200ms $ease-in-out;
     }
   }
 }
@@ -107,8 +122,17 @@
   flex: nowrap;
   align-items: center;
   text-align: left;
-  margin-bottom: 55px;
+  margin-bottom: 25px;
   margin-top: 60px;
+}
+
+.form__message {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.form__btn {
+  margin-top: 30px;
 }
 
 .microinfo__title {
@@ -121,4 +145,18 @@
 .microinfo__content {
   font-size: 0.625rem;
   color: $light;
+}
+
+.form--footer {
+  label {
+    background-color: $primary;
+  }
+  .form__input {
+    border-color: $white;
+    color: $white;
+    &:focus,
+    &:active {
+      border-color: $light;
+    }
+  }
 }

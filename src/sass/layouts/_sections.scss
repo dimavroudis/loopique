@@ -1,6 +1,4 @@
 .section {
-  position: sticky;
-  top: 0;
   background: $bg-color;
   padding-top: 168px;
   padding-bottom: 168px;
@@ -41,11 +39,29 @@
 
 .section--slider {
   min-height: 100vh;
+
+  .section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    @include media-up(md) {
+      flex-wrap: nowrap;
+    }
+  }
+  .section__heading {
+    font-size: 2.375rem;
+    line-height: 1.45;
+    margin: 15px 15px 15px 0;
+  }
 }
 
 .section--details {
   padding-top: 0;
-  .section__title, .section__heading  {
+  .section__title,
+  .section__heading {
     color: $white;
   }
 
@@ -54,7 +70,6 @@
     line-height: 1.16;
     margin-top: 0;
   }
-
 
   .section__background-image {
     position: absolute;
@@ -70,7 +85,7 @@
     position: relative;
     padding-top: 168px;
   }
-  .section__footer{
+  .section__footer {
     margin-top: 80px;
     text-align: center;
   }

@@ -9,6 +9,10 @@
   line-height: 1;
   transition: all 0.3s $ease-in-out;
 
+  &:not(:disabled){
+    cursor: pointer;
+  }
+
   &:after {
     content: '>';
     display: inline-block;

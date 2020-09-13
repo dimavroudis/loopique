@@ -28,8 +28,16 @@
   }
 }
 
+.site-contact__title{
+  margin-bottom: 50px;
+}
+
+.site-contact__text{
+  margin-bottom: 60px;
+}
+
 .site-copyright {
-  background: $white;
+  background: $bg-color;
   color: $primary;
   min-height: 70px;
 }

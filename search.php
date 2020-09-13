@@ -48,7 +48,7 @@ get_header();
 				</h1>
 			</div>
 		</header>
-		<div class="container">
+		<div class="post-content container">
 			<p><?php esc_html_e('Maybe try a different?', 'loopique'); ?></p>
 			<?php get_search_form(); ?>
 		</div>

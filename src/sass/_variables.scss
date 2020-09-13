@@ -1,6 +1,7 @@
 // Colors
 
 $yellow: #ffce40;
+$red: #ff4040;
 $dark: #131313;
 $light: #f9f9f9;
 $black: #000000;
@@ -21,6 +22,7 @@ $font-family: 'Poppins', sans-serif;
 // Breakpoints
 
 $breakpoints: (
+  xs: 420px,
   sm: 576px,
   md: 768px,
   lg: 992px,
