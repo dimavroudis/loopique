@@ -76,7 +76,6 @@
     }
   }
   .dropdown__list {
-    // margin-top: 4px;
     right: 0.4em;
   }
   @include media-down(lg) {
@@ -85,6 +84,7 @@
       display: none;
     }
     &,
+    &:focus-within,
     &:hover {
       .dropdown__list {
         position: relative;

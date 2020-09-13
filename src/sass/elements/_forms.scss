@@ -24,10 +24,12 @@
     &:focus,
     &:active {
       outline: 0;
+      box-shadow: 0 0;
       border-color: $primary;
     }
     &:invalid {
       outline: 0;
+      box-shadow: 0 0;
     }
   }
 

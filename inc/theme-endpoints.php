@@ -56,7 +56,7 @@ function submit_form($data)
     $message = isset($data['message']) ? $data['message'] : '';
 
     $to = get_bloginfo('admin_email');
-    $subject = __('Form Submition', 'loopique');
+    $subject = __('Form Submission', 'loopique');
     $body =  sprintf(__('<p>From: %1$s %2$s <a href="mailto:%3$s">%3$s</a></p><p>%4$s</p>', 'loopique'), $fname, $lname, $email, $message);
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
