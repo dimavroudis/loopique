@@ -1,0 +1,30 @@
+.btn{
+  display: inline-block;
+  border-radius: 2rem;
+  color: $white;
+  background-color: $secondary;
+  border: 1px solid $secondary;
+  padding: 1.25em 2.875em;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.3s $ease-in-out;
+
+  &:after {
+    content: '>';
+    display: inline-block;
+    margin-left: 1.25em;
+    transition: transform 0.3s $ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    border-color: $primary;
+    box-shadow: 0 0.5rem 1rem rgba($black, 0.3);
+    color: $white;
+
+    &:after {
+      transform: translateX(.5em);
+    }
+  }
+}

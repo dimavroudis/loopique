@@ -1,0 +1,140 @@
+.details {
+  margin-top: calc(100vh - 500px);
+}
+.details__header {
+  padding: 35px 20px 155px;
+  background: $primary;
+  color: $white;
+
+  @include media-up(sm) {
+    padding: 55px 50px 175px;
+  }
+  @include media-up(lg) {
+    padding: 75px 100px 195px;
+  }
+
+  .details__heading {
+    font-size: 3rem;
+    line-height: 1.16;
+    color: $white;
+  }
+}
+
+.details__wrapper {
+  margin-top: -105px;
+  padding: 0 20px;
+
+  @include media-up(sm) {
+    margin-top: -110px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @include media-up(lg) {
+    margin-top: -120px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.detail {
+  position: relative;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: box-shadow 300ms $ease-in-out, opacity 600ms $ease-in-out,
+    transform 600ms $ease-in-out;
+
+  @include media-up(lg) {
+    flex-direction: row;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    .detail__link {
+      background: $primary;
+      color: $white;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.detail__content {
+  padding: 20px 30px;
+  font-weight: 300;
+
+  @include media-up(sm) {
+    padding: 40px 75px;
+  }
+  @include media-up(lg) {
+    padding: 60px 95px;
+  }
+}
+
+.detail__title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.detail__link {
+  min-height: 50px;
+  flex-shrink: 0;
+  background: $dark;
+  color: $white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.3s $ease-in-out;
+
+  &:before {
+    content: '>';
+    padding: 10px 30px;
+    line-height: 1;
+    font-size: 24px;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: '';
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  @include media-up(lg) {
+    min-width: 50px;
+    justify-content: center;
+    &:before {
+      content: '>';
+      padding: 30px 10px;
+      line-height: 1;
+      font-size: 48px;
+    }
+  }
+}
+
+.details--empty {
+  margin-top: calc(100vh - 400px);
+  .details__header {
+    padding-bottom: 30px;
+
+    @include media-up(sm) {
+      padding-bottom: 55px;
+    }
+    @include media-up(lg) {
+      padding-bottom: 75px;
+    }
+  }
+  .details__wrapper {
+    margin-top: 0;
+  }
+}

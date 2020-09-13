@@ -1,0 +1,36 @@
+// Colors
+
+$yellow: #ffce40;
+$dark: #131313;
+$light: #f9f9f9;
+$black: #000000;
+$white: #ffffff;
+
+$primary: $yellow;
+$secondary: $dark;
+
+$bg-color: $light;
+$text-color: $black;
+
+//Typography
+
+$font-size: 16px;
+$line-height: 1.75;
+$font-family: 'Poppins', sans-serif;
+
+// Breakpoints
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$content-width: 1116px;
+$gutter: 1rem;
+
+//Animations
+
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);

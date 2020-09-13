@@ -1,0 +1,35 @@
+.site-footer {
+  position: relative;
+  background-color: $primary;
+  color: $light;
+}
+
+.site-contact {
+  padding: 125px 20px 100px;
+
+  @include media-up(sm) {
+    padding: 150px 50px 125px;
+  }
+  @include media-up(lg) {
+    padding: 192px 100px 150px;
+  }
+
+  .col {
+    padding-bottom: 0;
+    @include media-up(lg) {
+      &:not(:first-child) {
+        padding-left: 80px;
+      }
+
+      &:not(:last-child) {
+        padding-right: 80px;
+      }
+    }
+  }
+}
+
+.site-copyright {
+  background: $white;
+  color: $primary;
+  min-height: 70px;
+}

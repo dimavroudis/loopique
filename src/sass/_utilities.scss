@@ -1,0 +1,78 @@
+// Layout
+.container {
+  max-width: $content-width;
+  width: 100%;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+.col {
+  width: 100%;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  &:not(:last-child) {
+    padding-bottom: $gutter;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col--#{$i} {
+    @include media-up(lg) {
+      width: #{100% * ($i / 12)};
+    }
+  }
+}
+
+//Accessibility
+.screen-reader-text {
+  @include visually-hidden();
+}
+
+.screen-reader-link {
+  &:not(:focus) {
+    @include visually-hidden();
+  }
+}
+
+//Animations
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 600ms $ease-in-out;
+
+  &.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 600ms $ease-in-out;
+
+  &.animated {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeUp {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 600ms $ease-in-out;
+
+  &.animated {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

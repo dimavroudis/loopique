@@ -1,0 +1,124 @@
+.form {
+  text-align: right;
+}
+
+.form__group {
+  position: relative;
+  margin-bottom: 30px;
+  text-align: left;
+
+  &--last {
+    margin-bottom: 10px;
+  }
+
+  .form__input {
+    width: 100%;
+    height: 51px;
+    min-height: 51px;
+    border-width: 0 0 1px 0;
+    border-color: $white;
+    background: transparent;
+    color: $white;
+    transition: border-color 200ms ease-in-out;
+
+    &:focus,
+    &:active {
+      outline: 0;
+      border-color: $light;
+    }
+    &:invalid {
+      outline: 0;
+      //   border-color: rgba(211, 0, 0, 0.8);
+    }
+  }
+
+  textarea {
+    padding-top: 1em;
+    overflow: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  label {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding-top: 6px;
+    font-weight: 500;
+    background-color: $primary;
+    transition: all 400ms ease-out;
+  }
+  &--active label,
+  &--filled label {
+    font-size: 0.8rem;
+    transform: translateY(-1rem);
+  }
+}
+
+.form__checkbox {
+  margin-right: 1rem;
+  input[type='checkbox'] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked ~ label::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+  }
+  label {
+    display: block;
+    position: relative;
+    width: 34px;
+    height: 34px;
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $dark;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+  }
+}
+
+.form__hint {
+  font-size: 0.625rem;
+}
+
+.form__gdpr {
+  display: flex;
+  flex: nowrap;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 55px;
+  margin-top: 60px;
+}
+
+.microinfo__title {
+  font-size: 0.5625rem;
+  text-transform: uppercase;
+  color: $white;
+  margin-bottom: 1rem;
+}
+
+.microinfo__content {
+  font-size: 0.625rem;
+  color: $light;
+}
