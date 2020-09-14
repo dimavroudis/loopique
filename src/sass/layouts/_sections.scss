@@ -52,6 +52,8 @@
     }
   }
   .section__heading {
+    display: inline-block;
+    flex-grow: 0;
     font-size: 2.375rem;
     line-height: 1.45;
     margin: 15px 15px 15px 0;
@@ -81,8 +83,8 @@
     background-position: center;
     background-color: $dark;
 
-    @include media-up(xl){
-      background-attachment:fixed;
+    @include media-up(xl) {
+      background-attachment: fixed;
     }
   }
   .section__content {

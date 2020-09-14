@@ -50,12 +50,11 @@
 				);
 				?>
 				<div class="dropdown dropdown--language">
-					<div class="dropdown__label">EN</div>
+					<a href="#" class="dropdown__label">EN</a>
 					<ul class="dropdown__list">
 						<li><a class="dropdown__option dropdown__option--active">EN</a></li>
 						<li><a class="dropdown__option" href="#">EL</a></li>
 					</ul>
-
 				</div>
 			</nav>
 		</div>

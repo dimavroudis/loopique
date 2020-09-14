@@ -1,7 +1,7 @@
 .dropdown {
   position: relative;
 
-  &:hover, &:focus-within {
+  &:hover, &:focus {
     .dropdown__list {
       visibility: visible;
       opacity: 1;
@@ -84,7 +84,7 @@
       display: none;
     }
     &,
-    &:focus-within,
+    &:focus,
     &:hover {
       .dropdown__list {
         position: relative;

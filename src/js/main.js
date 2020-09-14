@@ -18,14 +18,16 @@ const animteOnEntry = new AnimateOnEntry(document.querySelectorAll('.animate-me'
 const parallax = new Parallax(document.querySelectorAll('.hero__content'));
 
 /*
- * Form
+ * Forms
  */
 const footerform = new Form(document.getElementById('contactForm'), 'wp-json/loopique/v1/form');
 const searchForm = new Form(document.getElementById('searchForm'));
 const commentform = new Form(document.getElementById('commentform'));
 
 
-
+/*
+ * Carousel
+ */
 const carousel = new Carousel('.carousel', {
     slidesPerView: 1,
     breakpoints: {
@@ -37,5 +39,10 @@ const carousel = new Carousel('.carousel', {
         }
     }
 });
+
+// iOS fix for dropdown on touch screen
+Array.prototype.slice.call(document.querySelectorAll('.dropdown__label')).forEach(label =>{
+    label.addEventListener('click', (e) => e.preventDefault())
+})
 
 
