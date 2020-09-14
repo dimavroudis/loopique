@@ -75,11 +75,15 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: $dark;
+
+    @include media-up(xl){
+      background-attachment:fixed;
+    }
   }
   .section__content {
     position: relative;

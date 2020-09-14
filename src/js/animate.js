@@ -1,4 +1,3 @@
-
 export class AnimateOnEntry {
 
     elements;
@@ -133,10 +132,10 @@ export class Header {
 
     toggleHeader() {
         const current_position = window.pageYOffset;
-        if (this.last_known_scroll_position < current_position && !document.body.className.includes('open-menu')) {
-            this.header.classList.add('site-header--hide');
-        } else if (this.last_known_scroll_position > current_position) {
+        if (this.last_known_scroll_position > current_position || document.body.className.includes('open-menu') || current_position < 10) {
             this.header.classList.remove('site-header--hide');
+        } else if (this.last_known_scroll_position < current_position) {
+            this.header.classList.add('site-header--hide');
         }
         this.last_known_scroll_position = current_position;
     }

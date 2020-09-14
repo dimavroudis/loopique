@@ -19,7 +19,7 @@ $hero = $args['hero'] ??  get_field('hero');
                 <p class="hero__subtitle"><?php echo $hero['subtitle'] ?></p>
             <?php endif ?>
             <?php if ($hero['button']) : ?>
-                <a class="btn hero__btn" target="<?php echo esc_attr($hero['button']['target'] ? $hero['button']['target'] : '_self') ?>" href="<?php echo  $hero['button']['url'] ?>"><?php echo  $hero['button']['title'] ?></a>';
+                <a class="btn hero__btn" target="<?php echo esc_attr($hero['button']['target'] ? $hero['button']['target'] : '_self') ?>" href="<?php echo  $hero['button']['url'] ?>"><?php echo  $hero['button']['title'] ?></a>
             <?php endif ?>
         </div>
     </div>

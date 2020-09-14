@@ -6,11 +6,15 @@
   min-height: 100vh;
   padding-top: 200px;
   padding-bottom: 150px;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 70%;
   background-color: $dark;
+
+  @include media-up(xl) {
+    background-attachment: fixed;
+  }
 
   &:before {
     content: '';
@@ -21,8 +25,8 @@
     height: 100%;
     background: linear-gradient(
       0deg,
-      rgb(255, 206, 64) 0%,
-      rgba(0, 0, 0, 0) 50%
+      $primary 0%,
+      transparent 50%
     );
   }
 }
