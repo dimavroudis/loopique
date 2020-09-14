@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * The template for the last section
+ *
+ * @package loopique
+ */
+
 $section = $args['section'];
 
 ?>

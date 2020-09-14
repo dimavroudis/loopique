@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * The template for the section with the carousel
+ *
+ * @package loopique
+ */
+
 $section = $args['section'];
 ?>
 
 
-<section class="section section--slider">
+<section class="section section--carousel">
     <div class="container">
         <h2 class="section__title"><?php echo $section['section_title'] ?></h2>
         <div class="section__header">
@@ -17,8 +23,8 @@ $section = $args['section'];
         <div class="row">
             <div class="carousel">
                 <div class="carousel__wrapper">
-                    <?php if ($section['slider']) :  ?>
-                        <?php foreach ($section['slider'] as $slide) : ?>
+                    <?php if ($section['carousel']) :  ?>
+                        <?php foreach ($section['carousel'] as $slide) : ?>
                             <div class="carousel__slide">
                                 <div class="card">
                                     <div class="card__body">

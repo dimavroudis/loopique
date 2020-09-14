@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Rest API Endpoints: Registration and implementation
+ *
+ * @package loopique
+ */
+
 add_action('rest_api_init', function () {
     register_rest_route('loopique/v1', 'form', array(
         'methods' => 'POST',
@@ -63,7 +69,7 @@ function submit_form($data)
     $mail_sent = wp_mail($to, $subject, $body, $headers);
 
     // if(!$mail_sent){
-    //     return new WP_Error('422', __('Oops! Something went wrong.', 'loopique'));
+    //     return new WP_Error('email_not_sent', __('Oops! Something went wrong.', 'loopique'));
     // }
 
     return array('message' => __('Thank you for contacting us.', 'loopique'));

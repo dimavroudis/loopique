@@ -1,7 +1,8 @@
 <?php
-
 /**
- * The template for the front page
+ * Template Name: Landing Page
+ * 
+ * The template for the landing page (same as frontpage)
  *
  * @package loopique
  */
@@ -15,7 +16,7 @@ $sections = get_field('sections');
 <main id="primary" class="site-main">
     <?php
     if ($hero) :
-        get_template_part('template-parts/hero', '', array('hero' => $hero, 'mouse' => have_rows('sections')));
+        get_template_part('template-parts/hero', '', array('hero' => $hero, 'mouse' => have_rows('sections')) );
     endif;
     ?>
     <?php if (have_rows('sections')) : ?>

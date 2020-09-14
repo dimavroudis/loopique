@@ -141,3 +141,26 @@ function loopique_scripts()
 	wp_enqueue_script('loopique-runtime', get_template_directory_uri() . '/assets/js/runtime.js', array(), LOOPIQUE_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'loopique_scripts');
+
+/**
+ * Disable Gutenberg in some pages/posts
+ */
+add_filter('use_block_editor_for_post', 'loopique_disable_gutenberg', 10, 2);
+function loopique_disable_gutenberg($use_block_editor, $post)
+{
+	if ($post->ID == get_option('page_on_front')) {
+		return false;
+	}
+	
+	$excluded_templates = array(
+		'templates/landing-page.php'
+	);
+
+	$template = get_page_template_slug($post);
+
+	if (in_array($template, $excluded_templates)) {
+		return false;
+	}
+
+	return $use_block_editor;
+}

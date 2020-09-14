@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * The template for the section afer header
+ *
+ * @package loopique
+ */
+
 $section = $args['section'];
 ?>
 

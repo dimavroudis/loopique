@@ -218,8 +218,8 @@
                 },
                 "layout_5f5c99eb1d4da": {
                     "key": "layout_5f5c99eb1d4da",
-                    "name": "slider",
-                    "label": "Slider Section",
+                    "name": "carousel",
+                    "label": "Carousel Section",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -243,7 +243,7 @@
                         },
                         {
                             "key": "field_5f5cb6b6c31bd",
-                            "label": "Slider Heading",
+                            "label": "Carousel Heading",
                             "name": "heading",
                             "type": "text",
                             "instructions": "",
@@ -262,8 +262,8 @@
                         },
                         {
                             "key": "field_5f5cb6c1c31be",
-                            "label": "Slider",
-                            "name": "slider",
+                            "label": "Carousel",
+                            "name": "carousel",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -544,6 +544,13 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/landing-page.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -551,8 +558,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
-    "modified": 1599913050
+    "modified": 1600108169
 }

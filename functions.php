@@ -14,11 +14,6 @@
 require get_template_directory() . '/inc/theme-setup.php';
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
  * Registers theme endpoints
  */
 require get_template_directory() . '/inc/theme-endpoints.php';
