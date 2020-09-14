@@ -29,7 +29,7 @@ $section = $args['section'];
                                 <div class="card">
                                     <div class="card__body">
                                         <?php if ($slide['image']) :  ?>
-                                            <img class="card__image" src="<?php echo $slide['image']['sizes']['card']; ?>" alt="<?php echo $slide['image']['alt']; ?>" />
+                                            <img class="card__image" src="<?php echo $slide['image']['sizes']['card'] ?? $slide['image']['sizes']['medium']; ?>" alt="<?php echo $slide['image']['alt']; ?>" />
                                         <?php endif; ?>
                                         <div class="card__content"><?php echo $slide['content'] ?></div>
                                         <?php if ($slide['link']) : ?>

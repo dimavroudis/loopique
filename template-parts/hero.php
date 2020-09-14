@@ -6,7 +6,7 @@
  * @package loopique
  */
 
-$hero = $args['hero'] ?  $args['hero'] :  get_field('hero');
+$hero = $args['hero'] ??  get_field('hero');
 ?>
 
 <div class="hero" style="background-image: url(<?php echo $hero['background'] ?>)">

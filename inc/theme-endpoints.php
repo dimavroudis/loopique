@@ -56,10 +56,10 @@ add_action('rest_api_init', function () {
 function submit_form($data)
 {
 
-    $fname = isset($data['fname']) ? $data['fname'] : '';
-    $lname = isset($data['lname']) ? $data['lname'] : '';
-    $email = isset($data['email']) ? $data['email'] : '';
-    $message = isset($data['message']) ? $data['message'] : '';
+    $fname = $data['fname'] ?? '';
+    $lname = $data['lname'] ?? '';
+    $email = $data['email'] ?? '';
+    $message =$data['message'] ?? '';
 
     $to = get_bloginfo('admin_email');
     $subject = __('Form Submission', 'loopique');
