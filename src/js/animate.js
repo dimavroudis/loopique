@@ -1,3 +1,4 @@
+
 export class AnimateOnEntry {
 
     elements;
@@ -13,7 +14,7 @@ export class AnimateOnEntry {
 
     constructor(elements) {
         this.elements = elements
-        this.elements.forEach((element) => {
+        Array.prototype.slice.call(this.elements).forEach((element) => {
             this.observer.observe(element);
         });
     }
@@ -58,7 +59,7 @@ export class Parallax {
 
     constructor(elements) {
         this.elements = elements
-        this.elements.forEach((element) => {
+        Array.prototype.slice.call(this.elements).forEach((element) => {
             if (element.dataset.animateParent) {
                 const parentElement = element.closest(element.dataset.animateParent);
                 if (parentElement.animateOnExit) {
@@ -131,8 +132,8 @@ export class Header {
     }
 
     toggleHeader() {
-        const current_position = window.scrollY
-        if (this.last_known_scroll_position < current_position && !document.body.classList.contains('open-menu')) {
+        const current_position = window.pageYOffset;
+        if (this.last_known_scroll_position < current_position && !document.body.className.includes('open-menu')) {
             this.header.classList.add('site-header--hide');
         } else if (this.last_known_scroll_position > current_position) {
             this.header.classList.remove('site-header--hide');

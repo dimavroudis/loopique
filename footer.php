@@ -41,9 +41,9 @@
 						</div>
 						<div class="form__group form__group--last">
 							<label for="contactMessage"><?php _e('Your Message ', 'loopique'); ?>*</label>
-							<textarea id="contactMessage" row="1" class="form__input" name="message" type="text" required></textarea>
+							<textarea id="contactMessage" rows="1" class="form__input" name="message" required></textarea>
 						</div>
-						<p class="form__hint">*mandatory fields</p>
+						<p class="form__hint">*<?php _e('mandatory fields', 'loopique'); ?></p>
 						<div class="form__gdpr">
 							<div class="form__checkbox">
 								<input type="checkbox" id="contactGDPR" name="gdpr" required>

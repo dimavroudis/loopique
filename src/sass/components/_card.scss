@@ -12,22 +12,36 @@
     transform-origin: top left;
     transition: all 300ms $ease-in-out;
     z-index: -1;
+    @media screen and (prefers-reduced-motion: reduce) {
+      opacity: 0;
+      transition: opacity 300ms $ease-in-out;
+    }
   }
 
   &:hover {
     .card__body {
         color: $white;
         transition: all 300ms $ease-in-out 50ms;
+        @media screen and (prefers-reduced-motion: reduce) {
+          transition: all 200ms $ease-in-out 50ms;
+        }
     }
     &::before {
       transition: all 400ms $ease-in-out;
       transform: scale(1);
+      @media screen and (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        transition: opacity 300ms $ease-in-out;
+      }
     }
   }
 
   .card__body {
     padding: 40px 20px 80px;
     transition: all 300ms $ease-in-out 50ms;
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: all 200ms $ease-in-out 50ms;
+    }
   }
 
   .card__link {

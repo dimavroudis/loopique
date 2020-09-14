@@ -14,7 +14,7 @@ export default class Form {
             )
             this.messageContainer = this.form.querySelector('.form__message');
 
-            this.inputs.forEach((elem) => {
+            Array.prototype.slice.call(this.inputs).forEach((elem) => {
                 if (elem.value) {
                     this.setActive(elem, true)
                 }
@@ -56,10 +56,9 @@ export default class Form {
         const XHR = new XMLHttpRequest()
         const formData = new FormData(this.form);
 
-        XHR.responseType = 'json';
-
         XHR.addEventListener('load', (event) => {
-            this.showMessage(event.target.response)
+            const jsonResponse = JSON.parse(event.target.responseText);
+            this.showMessage(jsonResponse)
         });
 
         XHR.open('POST', this.endpoint);

@@ -70,7 +70,7 @@
 }
 
 .form__checkbox {
-  // margin-right: 1rem;
+
   input[type='checkbox'] {
     position: absolute;
     z-index: -1;
@@ -79,6 +79,10 @@
     &:checked ~ label::after {
       transform: scale(1);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffce40' d='M504.502 75.496c-9.997-9.998-26.205-9.998-36.204 0L161.594 382.203 43.702 264.311c-9.997-9.998-26.205-9.997-36.204 0-9.998 9.997-9.998 26.205 0 36.203l135.994 135.992c9.994 9.997 26.214 9.99 36.204 0L504.502 111.7c9.998-9.997 9.997-26.206 0-36.204z'/%3E%3C/svg%3E");
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        opacity: 1;
+      }
     }
   }
   label {
@@ -111,6 +115,11 @@
       background-size: 50% 50%;
       transform: scale(0) rotate(45deg);
       transition: transform 200ms $ease-in-out;
+      @media screen and (prefers-reduced-motion: reduce) {
+        transform: scale(1);
+        opacity: 0;
+        transition: opacity 200ms $ease-in-out;
+      }
     }
   }
 }

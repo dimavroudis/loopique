@@ -10,8 +10,8 @@ $section = $args['section'];
         <div class="section__header">
             <h3 class="section__heading"><?php echo $section['heading'] ?></h3>
             <div class="carousel__nav">
-                <button type="button" data-carousel-nav="prev" aria-label="<?php _e('Previous Slide', 'loopique'); ?>"><</button>
-                <button type="button" data-carousel-nav="next" aria-label="<?php _e('Next Slide', 'loopique'); ?>">></button>
+                <button type="button" data-carousel-nav="prev" aria-label="<?php _e('Previous Slide', 'loopique'); ?>">&lt;</button>
+                <button type="button" data-carousel-nav="next" aria-label="<?php _e('Next Slide', 'loopique'); ?>">&gt;</button>
             </div>
         </div>
         <div class="row">
@@ -27,7 +27,7 @@ $section = $args['section'];
                                         <?php endif; ?>
                                         <div class="card__content"><?php echo $slide['content'] ?></div>
                                         <?php if ($slide['link']) : ?>
-                                            <a class="card__link" href=" <?php echo $slide['link']; ?>">
+                                            <a class="card__link" href="<?php echo $slide['link']; ?>">
                                                 <span class="screen-reader-text"><?php _e('Read more', 'loopique'); ?></span>
                                             </a>
                                         <?php endif; ?>

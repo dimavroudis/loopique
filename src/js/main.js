@@ -1,3 +1,5 @@
+import './polyfill';
+
 import PrimaryMenu from './nav';
 import { AnimateOnEntry, Parallax, Header } from './animate';
 import Form from './form';

@@ -1,7 +1,4 @@
 .site-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,17 +32,18 @@
 }
 
 .site-branding {
-  max-width: 168px;
   .custom-logo-link {
     display: block;
   }
   .custom-logo {
     display: block;
     width: auto;
+    max-width: 168px;
   }
 }
 
 .burger {
+  margin-left: auto;
   padding: 0.5rem;
   border: 0;
   background: transparent;
@@ -61,6 +59,7 @@
   }
 
   .burger__wrapper {
+    display: block;
     overflow: visible;
     position: relative;
     width: 42px;

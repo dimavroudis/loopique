@@ -32,11 +32,11 @@
 				<?php the_custom_logo(); ?>
 			</div>
 			<button class="burger burger-trigger" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'project_parenting'); ?>">
-				<div class="burger__wrapper" aria-hidden="true">
+				<span class="burger__wrapper" aria-hidden="true">
 					<span class="burger__line"></span>
 					<span class="burger__line"></span>
 					<span class="burger__line"></span>
-				</div>
+				</span>
 			</button>
 			<nav id="site-navigation" class="main-navigation">
 				<?php
