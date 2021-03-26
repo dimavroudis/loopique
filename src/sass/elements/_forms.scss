@@ -144,8 +144,14 @@
   font-weight: 600;
   font-size: 1.3em;
 }
-.form__btn {
+
+.form__btn.btn {
   margin-top: 30px;
+  color: $primary;
+  
+  &:hover , &:focus{
+    color: $primary;
+  }
 }
 
 .microinfo__title {

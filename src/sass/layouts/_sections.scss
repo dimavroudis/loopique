@@ -40,6 +40,13 @@
 .section--carousel {
   min-height: 100vh;
 
+  .section__title{
+   
+    @include media-up(lg) {
+      margin-bottom: 120px;
+    }
+  }
+
   .section__header {
     display: flex;
     justify-content: space-between;

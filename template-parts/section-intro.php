@@ -29,7 +29,7 @@ $section = $args['section'];
                     <?php endif; ?>
                 </div>
                 <?php if ($section['button']) : ?>
-                    <a class="btn" href="<?php echo $section['button']['url'] ?>" target="<?php echo esc_attr($section['button']['target'] ? $section['button']['target'] : '_self') ?>">
+                    <a class="btn btn--lg" href="<?php echo $section['button']['url'] ?>" target="<?php echo esc_attr($section['button']['target'] ? $section['button']['target'] : '_self') ?>">
                         <?php echo $section['button']['title'] ?>
                     </a>
                 <?php endif; ?>

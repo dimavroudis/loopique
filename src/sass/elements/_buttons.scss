@@ -1,4 +1,4 @@
-.btn{
+.btn {
   display: inline-block;
   border-radius: 2rem;
   color: $white;
@@ -9,7 +9,7 @@
   line-height: 1;
   transition: all 0.3s $ease-in-out;
 
-  &:not(:disabled){
+  &:not(:disabled) {
     cursor: pointer;
   }
 
@@ -28,7 +28,27 @@
     color: $white;
 
     &:after {
-      transform: translateX(.5em);
+      transform: translateX(0.5em);
+    }
+  }
+
+  &--lg {
+    min-width: 290px;
+    padding-right: 3.875em;
+    position: relative;
+    &:after {
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2.875em;
+    }
+    &:hover,
+    &:focus {
+  
+      &:after {
+        transform: translateX(0.5em) translateY(-50%);
+      }
     }
   }
 }

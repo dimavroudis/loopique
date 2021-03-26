@@ -66,8 +66,8 @@
 }
 
 .dropdown--language {
-  padding-top: calc(20px - 0.4em);
-  font-size: 0.875rem;
+  padding-top: calc(20px - 0.4em + 0.125em);
+  font-size: 0.75rem;
   font-weight: 500;
   .dropdown__label {
     color: $white;
