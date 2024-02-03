@@ -1,8 +1,6 @@
 
 # Loopique WP Theme
 
-Theme for Beat's WordPress Developer Assignment
-
 ## Building tools
 
 * Starter Theme: _s 
